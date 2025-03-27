@@ -1,20 +1,24 @@
 import { JSX } from "react";
 import CitiesCard from "../../components/cities-card/cities-card";
 import {Logo} from "../../components/logo/logo";
-
-
-type MainPageProps = {
+import { Link } from "react-router-dom";
+import { CitiesCardList } from "../../components/cities-card-lis/cities-card-lis";
+import { OffersList } from "../../types/offer";
+type MainPageProps ={
   rentalOffersCount: number;
+  offersList: OffersList[]
 }
 
-function MainPage({rentalOffersCount} : MainPageProps): JSX.Element {
+
+
+function MainPage({rentalOffersCount, offersList}: MainPageProps): JSX.Element {
     return(
         <div className="page page--gray page--main">
       <header className="header">
         <div className="container">
           <div className="header__wrapper">
             <div className="header__left">
-            <Logo />
+              <Logo/>
             </div>
             <nav className="header__nav">
               <ul className="header__nav-list">
@@ -27,9 +31,9 @@ function MainPage({rentalOffersCount} : MainPageProps): JSX.Element {
                   </a>
                 </li>
                 <li className="header__nav-item">
-                  <a className="header__nav-link" href="#">
+                  <Link to="/login" className="header__nav-link" >
                     <span className="header__signout">Sign out</span>
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </nav>
@@ -95,17 +99,7 @@ function MainPage({rentalOffersCount} : MainPageProps): JSX.Element {
                   <li className="places__option" tabIndex={0}>Top rated first</li>
                 </ul>
               </form>
-              <div className="cities__places-list places__list tabs__content">
-              <CitiesCard/>
-
-              <CitiesCard/>
-
-              <CitiesCard/>
-
-              <CitiesCard/>
-
-              <CitiesCard/>
-              </div>
+            <CitiesCardList offersList={offersList}/>
             </section>
             <div className="cities__right-section">
               <section className="cities__map map"></section>
@@ -115,8 +109,6 @@ function MainPage({rentalOffersCount} : MainPageProps): JSX.Element {
       </main>
     </div>
     );
-}
-export default MainPage;
-
-
+    }
     
+    export default MainPage

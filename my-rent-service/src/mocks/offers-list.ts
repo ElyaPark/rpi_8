@@ -76,7 +76,7 @@ export const offersList: OffersList[] = [
     title: 'Montmartre Artist Loft',
     type: 'loft',
     price: 230,
-    previewImage: '.././public/img/apartment-04.jpg',
+    previewImage: '.././public/img/apartment-small-03.jpg',
     city: {
       name: 'Paris',
       location: {
@@ -101,7 +101,7 @@ export const offersList: OffersList[] = [
     title: "Cozy Apartment in the Heart of Cologne",
     type: "apartment",
     price: 120,
-    previewImage: '.././public/img/apartment-05.jpg',
+    previewImage: '.././public/img/apartment-small-04.jpg',
     city: {
       name: "Cologne",
       location: {
@@ -124,7 +124,7 @@ export const offersList: OffersList[] = [
     title: "Cathedral View Loft",
     type: "loft",
     price: 180,
-    previewImage: '.././public/img/apartment-05.jpg',
+    previewImage: '.././public/img/apartment-small-04.jpg',
     city: {
       name: "Cologne",
       location: {
@@ -218,7 +218,7 @@ export const offersList: OffersList[] = [
     title: "EU District Studio",
     type: "room",
     price: 110,
-    previewImage: '.././public/img/apartment-04.jpg',
+    previewImage: '.././public/img/apartment-small-03.jpg',
     city: {
       name: "Brussels",
       location: {
@@ -241,7 +241,7 @@ export const offersList: OffersList[] = [
     title: "Art Nouveau Apartment",
     type: "apartment",
     price: 240,
-    previewImage: '.././public/img/apartment-04.jpg',
+    previewImage: '.././public/img/apartment-small-03.jpg',
     city: {
       name: "Brussels",
       location: {
@@ -264,7 +264,7 @@ export const offersList: OffersList[] = [
     title: "Sablon District Penthouse",
     type: "apartment",
     price: 320,
-    previewImage: '.././public/img/apartment-05.jpg',
+    previewImage: '.././public/img/apartment-small-04.jpg',
     city: {
       name: "Brussels",
       location: {
@@ -382,7 +382,7 @@ export const offersList: OffersList[] = [
     title: "Luxury Penthouse with View",
     type: "apartment",
     price: 450,
-    previewImage: '.././public/img/apartment-04.jpg',
+    previewImage: '.././public/img/apartment-small-03.jpg',
     city: {
       name: "Hamburg",
       location: {
@@ -405,7 +405,7 @@ export const offersList: OffersList[] = [
     title: "HafenCity Apartment",
     type: "apartment",
     price: 320,
-    previewImage: '.././public/img/apartment-05.jpg',
+    previewImage: '.././public/img/apartment-small-04.jpg',
     city: {
       name: "Hamburg",
       location: {

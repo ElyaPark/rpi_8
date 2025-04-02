@@ -9,32 +9,37 @@ import { AppRoute} from "../../const";
 import { PrivateRoute } from "../private-route/private-route";
 import { AutorizationStatus } from "../../const";
 import { FullOffer, OffersList } from "../../types/offer";
+import { Review } from "../../types/review";
 
 type AppMainPageProps={
-  rentalOffersCount: number;
-  offersList : OffersList[];
-  offers: FullOffer[];
+    rentalOffersCount: number;
+    offersList : OffersList[]
+    offers: FullOffer[];
+    reviewsList : Review[];
+    
 }
 
 
-function App({rentalOffersCount, offers,offersList}: AppMainPageProps): JSX.Element{
-return(
-  <BrowserRouter>
-    <Routes>
-      <Route path={AppRoute.Main} element={<MainPage rentalOffersCount={rentalOffersCount} offersList={offersList} />} />
-      <Route path={AppRoute.Login} element={<LoginPage/>} />
-      <Route path={`${AppRoute.Offer}/:id`} element={<OfferPage offers={offers}/>} />
-      <Route
-          path={ AppRoute.Favorites }
-          element={<PrivateRoute autorizationStatus={ AutorizationStatus.Auth }>
-            <FavoritesPage />
-            </PrivateRoute>
-          }/>
 
-      <Route path="*" element={<ErrorPage/>} />
-    </Routes>
-  </BrowserRouter>
-)
+function App({rentalOffersCount, offers,offersList,reviewsList}: AppMainPageProps): JSX.Element{
+  return(
+    <BrowserRouter>
+      <Routes>  
+        <Route path={AppRoute.Main} element={<MainPage rentalOffersCount={rentalOffersCount} offersList={ offersList } />} />
+        <Route path={AppRoute.Login} element={<LoginPage/>} />
+        <Route path={`${AppRoute.Offer}/:id`} element={<OfferPage  offers={offers} reviewsList={reviewsList} offersList={ offersList }/>} />
+        <Route path={AppRoute.Favorites} 
+          element={
+            <PrivateRoute
+              autorizationStatus={AutorizationStatus.Auth}>
+                <FavoritesPage offersList={ offersList }/>
+            </PrivateRoute>
+            } 
+          />
+        <Route path="*" element={<ErrorPage/>} />
+      </Routes>
+    </BrowserRouter>
+  )
 }
 
 export default App;

@@ -9,9 +9,11 @@ const offers: FullOffer[] = [
         'type' : 'apartament',
         'price' : 370,
         'images' : [
-            '../../public/img/apartment-01.jpg',
-            '../../public/img/apartment-02.jpg',
-            '../../public/img/apartment-03.jpg',
+            '.././public/img/apartment1-01.jpg',
+            '.././public/img/apartment1-02.jpg',
+            '.././public/img/apartment1-03.jpg',
+            '.././public/img/apartment1-04.jpg',
+            '.././public/img/apartment1-05.jpg',
         ],
         'city' : {
             'name' : 'Paris',
@@ -24,7 +26,7 @@ const offers: FullOffer[] = [
         'location' : {
             'latitude' : 48.8566100000004,
             'longitude' : 2.342499,
-            'zoom' : 16
+            'zoom' : 13
         },
 
         'goods' : [
@@ -56,108 +58,147 @@ const offers: FullOffer[] = [
     },
 
     {
-        'id': 'a8f5c2d1-7e3a-4c8f-b0f6-9d7f1a8b4c2e',
-        'title': 'Cozy Beach House',
-        'description': 'A charming beachfront house with stunning ocean views. Fully equipped kitchen, outdoor BBQ area, and private beach access. Perfect for couples and small families.',
-        'type': 'house',
-        'price': 420,
+        "id": "a1b2c3d4-e5f6-7g8h-9i0j-k1l2m3n4o5p6",
+        "title": "Cozy Apartment in the Heart of Cologne",
+        "description": "A charming apartment located in the historic center of Cologne. Perfect for couples or small families, with easy access to the cathedral and local attractions.",
+        "type": "apartment",
+        "price": 120,
         'images' : [
-            '../../public/img/apartment-01.jpg',
-            '../../public/img/apartment-02.jpg',
-            '../../public/img/apartment-03.jpg',
+          '.././public/img/apartment1-01.jpg',
+          '.././public/img/apartment1-02.jpg',
+          '.././public/img/apartment1-03.jpg',
+          '.././public/img/apartment1-04.jpg',
+          '.././public/img/apartment1-05.jpg',
+      ],
+        "city": {
+          "name": "Cologne",
+          "location": {
+            "latitude": 50.937531,
+            "longitude": 6.960279,
+            "zoom": 12
+          }
+        },
+        "location": {
+          "latitude": 50.937531,
+          "longitude": 6.960279,
+          "zoom": 12
+        },
+        "goods": [
+          "Wi-Fi",
+          "Heating",
+          "Kitchen",
+          "Washing machine",
+          "Towels",
+          "Coffee machine",
+          "Laptop friendly workspace"
         ],
-        'city': {
-            'name': 'Barcelona',
-            'location': {
-                'latitude': 41.3851,
-                'longitude': 2.1734,
-                'zoom': 13
-            }
+        "host": {
+          "isPro": true,
+          "name": "Michael",
+          "avatarUrl": ".././public/img/avatar-michael.jpg"
         },
-        'location': {
-            'latitude': 41.3851,
-            'longitude': 2.1734,
-            'zoom': 13
-        },
-        'goods': [
-            'Heating',
-            'Wi-Fi',
-            'Fridge',
-            'Laptop friendly workspace',
-            'Air conditioning',
-            'Washer',
-            'Towels',
-            'Dishwasher',
-            'Kitchen',
-            'Washing machine',
-            'Breakfast',
-            'Coffee machine',
-            'Pool'
-        ],
-        'host': {
-            'isPro': false,
-            'name': 'John',
-            'avatarUrl': '.././public/img/avatar-john.jpg'
-        },
-        'isPremium': true,
-        'isFavorite': false,
-        'rating': 4.7,
-        'bedrooms': 3,
-        'maxAdults': 6
-    },
+        "isPremium": true,
+        "isFavorite": false,
+        "rating": 4.7,
+        "bedrooms": 1,
+        "maxAdults": 2
+      },
 
-    {
-        'id': 'f3d7a1b2-c4e5-4f6b-a9f8-1c2d3e4f5a6b',
-        'title': 'Modern City Loft',
-        'description': 'A stylish loft in the heart of the city. Features an open-plan living space, high ceilings, and a rooftop terrace with panoramic city views. Ideal for solo travelers and business guests.',
-        'type': 'room',
-        'price': 280,
+      {
+        "id": "b2c3d4e5-f6g7-8h9i-0j1k-l2m3n4o5p6q7",
+        "title": "Modern Loft near Grand Place",
+        "description": "A stylish loft with a view of the city center. Ideal for travelers who want to explore Brussels' vibrant culture and cuisine.",
+        "type": "loft",
+        "price": 200,
         'images' : [
-            '../../public/img/apartment-01.jpg',
-            '../../public/img/apartment-02.jpg',
-            '../../public/img/apartment-03.jpg',
- 
+          '.././public/img/apartment1-01.jpg',
+          '.././public/img/apartment1-02.jpg',
+          '.././public/img/apartment1-03.jpg',
+          '.././public/img/apartment1-04.jpg',
+          '.././public/img/apartment1-05.jpg',
+      ],
+        "city": {
+          "name": "Brussels",
+          "location": {
+            "latitude": 50.850346,
+            "longitude": 4.351721,
+            "zoom": 13
+          }
+        },
+        "location": {
+          "latitude": 50.850346,
+          "longitude": 4.351721,
+          "zoom": 13
+        },
+        "goods": [
+          "Wi-Fi",
+          "Air conditioning",
+          "Heating",
+          "Kitchen",
+          "Dishwasher",
+          "Coffee machine",
+          "Laptop friendly workspace",
+          "TV"
         ],
-        'city': {
-            'name': 'Berlin',
-            'location': {
-                'latitude': 52.5200,
-                'longitude': 13.4050,
-                'zoom': 13
-            }
+        "host": {
+          "isPro": false,
+          "name": "Sophie",
+          "avatarUrl": "avatar-sophie.jpg"
         },
-        'location': {
-            'latitude': 52.5200,
-            'longitude': 13.4050,
-            'zoom': 13
-        },
-        'goods': [
-            'Heating',
-            'Wi-Fi',
-            'Fridge',
-            'Laptop friendly workspace',
-            'Air conditioning',
-            'Washer',
-            'Towels',
-            'Dishwasher',
-            'Kitchen',
-            'Washing machine',
-            'Breakfast',
-            'Coffee machine',
-            'Dryer'
-        ],
-        'host': {
-            'isPro': true,
-            'name': 'Emily',
-            'avatarUrl': '.././public/img/avatar-emily.jpg'
-        },
-        'isPremium': false,
-        'isFavorite': true,
-        'rating': 4.8,
-        'bedrooms': 1,
-        'maxAdults': 2
-    }
+        "isPremium": false,
+        "isFavorite": true,
+        "rating": 4.5,
+        "bedrooms": 2,
+        "maxAdults": 4
+      },
 
+      {
+        "id": "c3d4e5f6-g7h8-9i0j-1k2l-m3n4o5p6q7r8",
+        "title": "Charming Canal House",
+        "description": "A beautiful house located along one of Amsterdam's iconic canals. Perfect for a romantic getaway or a small group of friends.",
+        "type": "house",
+        "price": 300,
+        'images' : [
+          '.././public/img/apartment1-01.jpg',
+          '.././public/img/apartment1-02.jpg',
+          '.././public/img/apartment1-03.jpg',
+          '.././public/img/apartment1-04.jpg',
+          '.././public/img/apartment1-05.jpg',
+      ],
+        "city": {
+          "name": "Amsterdam",
+          "location": {
+            "latitude": 52.370216,
+            "longitude": 4.895168,
+            "zoom": 14
+          }
+        },
+        "location": {
+          "latitude": 52.370216,
+          "longitude": 4.895168,
+          "zoom": 14
+        },
+        "goods": [
+          "Wi-Fi",
+          "Heating",
+          "Kitchen",
+          "Washing machine",
+          "Towels",
+          "Coffee machine",
+          "Laptop friendly workspace",
+          "Bicycle rental"
+        ],
+        "host": {
+          "isPro": true,
+          "name": "Emma",
+          "avatarUrl": "avatar-emma.jpg"
+        },
+        "isPremium": true,
+        "isFavorite": true,
+        "rating": 4.9,
+        "bedrooms": 3,
+        "maxAdults": 5
+      },
 ]
 
 export {offers};

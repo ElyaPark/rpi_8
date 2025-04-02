@@ -1,0 +1,46 @@
+.cities__map {
+    min-height: 500px;
+    border: 3px dashed #ccc;
+  }
+  
+  .cities__map .list {
+    display: flex;
+    list-style: none;
+  }
+  
+  .cities__map .list__item {
+    cursor: pointer;
+  }
+  
+  .cities__map .list__item:hover {
+    color: orangered;
+  }
+  
+  .cities__map .list__item:not(:last-child) {
+    margin-right: 20px;
+  }
+  
+
+  .offer__map {
+    margin-left: 120px;
+    min-height: 500px;
+    width: 1300px;
+    border: 3px solid  #ccc;
+  }
+  
+  .offer__map .list {
+    display: flex;
+    list-style: none;
+  }
+  
+  .offer__map .list__item {
+    cursor: pointer;
+  }
+  
+  .offer__map .list__item:hover {
+    color: orangered;
+  }
+  
+  .offer__map .list__item:not(:last-child) {
+    margin-right: 20px;
+  }

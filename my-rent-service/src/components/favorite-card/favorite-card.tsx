@@ -1,35 +1,33 @@
-import { JSX, useState } from "react"
+import { JSX } from "react";
 import { Link } from "react-router-dom";
 import { AppRoute } from "../../const";
 
 type FavoritesCardProps = {
   id: string;
   title: string;
-  type: string;
-  price: number;
+  type : string;
+  price : number;
+  city: string;
   isPremium: boolean;
-  previewImage: string;
-  rating: number;  
+  previewImage : string;
+  rating: number;
+  isFavorite: boolean;
 }
 
 
-
-
-function FavoritesCard({ id, title, type, price, previewImage, isPremium, rating}: FavoritesCardProps): JSX.Element {
-  const [, setOfferId] = useState('')
+function FavoritesCard({id,title,type,price,isPremium,previewImage,rating}  : FavoritesCardProps): JSX.Element {
     return(
-        <article className="favorites__card place-card" onMouseOver={() => setOfferId(id)} onMouseOut={() => setOfferId('')}>
-         {isPremium ? (
-            <div className="place-card__mark">
-                <span>Premium</span>
-            </div>
-         ) : null
-         }   
-
+        <article className="favorites__card place-card">
+            {isPremium ? (
+                <div className="place-card__mark">
+                  <span>Premium</span>
+                </div>) : null
+                }
         <div className="favorites__image-wrapper place-card__image-wrapper">
-          <Link to={`${AppRoute.Offer}/${id}`}>
-            <img className="place-card__image" src={previewImage} width="150" height="110" alt="Place image"/>
-          </Link>
+        <Link to={`${AppRoute.Offer}/${id}`}>
+          <img className="place-card__image" src={previewImage} width="150" height="110" alt="Place image"/>
+        </Link>
+
         </div>
         <div className="favorites__card-info place-card__info">
           <div className="place-card__price-wrapper">
@@ -46,7 +44,7 @@ function FavoritesCard({ id, title, type, price, previewImage, isPremium, rating
           </div>
           <div className="place-card__rating rating">
             <div className="place-card__stars rating__stars">
-              <span style={{width: `${(rating / 5) * 100}%`}}></span>
+              <span style={{width:`${(rating / 5) * 100}%` }}></span>
               <span className="visually-hidden">Rating</span>
             </div>
           </div>
@@ -55,8 +53,9 @@ function FavoritesCard({ id, title, type, price, previewImage, isPremium, rating
           </h2>
           <p className="place-card__type">{type}</p>
         </div>
-      </article>
-    )
-}
+        </article>
+        );
+    }
 
 export default FavoritesCard;
+    

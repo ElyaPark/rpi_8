@@ -9,38 +9,42 @@ import { CitiesCardList } from "../../components/cities-card-lis/cities-card-lis
 import {ReviewsList} from "../../components/reviews-list/reviews-list";
 import { Review } from "../../types/review";
 import Map from "../../components/map/map";
-import { CITY } from "../../mocks/city"; 
-import { POINTS } from "../../mocks/points";
+// import { CITY } from "../../mocks/city"; 
+// import { POINTS } from "../../mocks/points";
 import MapList from "../../components/mapList/mapList";
-import { Points } from "../../types/map";
+// import { Points } from "../../types/map";
 import { OffersList } from "../../types/offer";
 
 
 
 type OfferProps = {
-  offers : FullOffer[];
+  offers : FullOffer[];   
   reviewsList : Review[];
   offersList: OffersList[]
+  reviewsOffersCount : number;
 };
 
 
-function OfferPage({offers,reviewsList,offersList}  : OfferProps): JSX.Element {
-    const [selectedPoint, setSelectedPoint] = useState<Points | null>(null);
-  
-    const handleListItemHover = (listItemName:string) => {
-      const currentPoint = POINTS.find((point) =>
-        point.title === listItemName,
-      );
-      setSelectedPoint(currentPoint || null);
-    };
-  
-  
+function OfferPage({offers,reviewsList,offersList, reviewsOffersCount}  : OfferProps): JSX.Element {
+  const [selectedPoint, setSelectedPoint] = useState<OffersList | null>(null);
   const params = useParams();
-  const offer = offers.find((item) => item.id === params.id)
-  if (!offer){
-    return <ErrorPage/>
-  }
+  const offer = offers.find((item) => item.id === params.id);
+
+  const cityOffers = offer
+    ? offersList.filter((item) => item.city.name === offer.city.name)
+    : [];
+
+  const handleListItemHover = (offerId: string) => {
+    const currentPoint = offersList.find((offer) => offer.title === offerId);
+
+    setSelectedPoint(currentPoint || null);
+  };
+    
+    if (!offer){
+      return <ErrorPage/>
+    }
     return(
+      
     <div className="page">
         <header className="header">
           <div className="container">
@@ -156,7 +160,7 @@ function OfferPage({offers,reviewsList,offersList}  : OfferProps): JSX.Element {
                   </div>
                 </div>
                 <section className="offer__reviews reviews">
-                  <h2 className="reviews__title">Reviews &middot; <span className="reviews__amount">1</span></h2>
+                  <h2 className="reviews__title">Reviews &middot; <span className="reviews__amount">{reviewsOffersCount}</span></h2>
                     <ReviewsList reviewsList={reviewsList}/>
                   <CommentSubmissionForm/>
 
@@ -164,10 +168,10 @@ function OfferPage({offers,reviewsList,offersList}  : OfferProps): JSX.Element {
               </div>
             </div>
             <section className="offer__map">
-            <h1>Парки города {CITY.title}:</h1>
-                <MapList points={POINTS} onListItemHover={handleListItemHover}/>
-                <Map city={CITY}
-                points={POINTS}
+            <h1>Аппартаменты города {offer.city.name}:</h1>
+                <MapList points={cityOffers} onListItemHover={handleListItemHover}/>
+                <Map city={offer.city}
+                points={cityOffers}
                   selectedPoint={selectedPoint}
                   />
             </section>
@@ -176,7 +180,7 @@ function OfferPage({offers,reviewsList,offersList}  : OfferProps): JSX.Element {
             <section className="near-places places">
               <h2 className="near-places__title">Other places in the neighbourhood</h2>
               <div className="near-places__list places__list">
-              <CitiesCardList offersList={ offersList }/>
+              <CitiesCardList offersList={ cityOffers }/>
               </div>
             </section>
           </div>

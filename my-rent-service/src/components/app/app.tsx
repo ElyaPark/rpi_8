@@ -4,30 +4,31 @@ import LoginPage from "../../pages/login-page/login-page";
 import FavoritesPage from "../../pages/favorites-page/favorites-page";
 import ErrorPage from "../../pages/not-found-page/not-found-page";
 import OfferPage from "../../pages/offer-page/offer-page";
-import { BrowserRouter as Router, Routes, Route, BrowserRouter } from "react-router-dom";
 import { AppRoute} from "../../const";
 import { PrivateRoute } from "../private-route/private-route";
 import { AutorizationStatus } from "../../const";
 import { FullOffer, OffersList } from "../../types/offer";
 import { Review } from "../../types/review";
+import { BrowserRouter as BrowserRouter, Routes, Route } from "react-router-dom";
+
 
 type AppMainPageProps={
     rentalOffersCount: number;
     offersList : OffersList[]
     offers: FullOffer[];
     reviewsList : Review[];
-    
+    reviewsOffersCount: number
 }
 
 
 
-function App({rentalOffersCount, offers,offersList,reviewsList}: AppMainPageProps): JSX.Element{
+function App({ offers,offersList,reviewsList,reviewsOffersCount}: AppMainPageProps): JSX.Element{
   return(
     <BrowserRouter>
       <Routes>  
-        <Route path={AppRoute.Main} element={<MainPage rentalOffersCount={rentalOffersCount} offersList={ offersList } />} />
+        <Route path={AppRoute.Main} element={<MainPage />} />
         <Route path={AppRoute.Login} element={<LoginPage/>} />
-        <Route path={`${AppRoute.Offer}/:id`} element={<OfferPage  offers={offers} reviewsList={reviewsList} offersList={ offersList }/>} />
+        <Route path={`${AppRoute.Offer}/:id`} element={<OfferPage  offers={offers} reviewsList={reviewsList} offersList={ offersList } reviewsOffersCount={reviewsOffersCount}/>} />
         <Route path={AppRoute.Favorites} 
           element={
             <PrivateRoute

@@ -1,5 +1,6 @@
 .cities__map {
     min-height: 500px;
+    width: 520px;
     border: 3px dashed #ccc;
   }
   
@@ -20,7 +21,7 @@
     margin-right: 20px;
   }
   
-
+  
   .offer__map {
     margin-left: 120px;
     min-height: 500px;

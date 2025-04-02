@@ -1,15 +1,15 @@
 import {JSX} from 'react';
-import { Points } from '../../types/map';
+import { OffersList } from '../../types/offer';
 
 type MapListProps ={
-    points: Points[];
-    onListItemHover: (title: string) => void; 
+    points: OffersList[];
+    onListItemHover: (id: string) => void; 
 }
 
 function MapList({points,onListItemHover}: MapListProps): JSX.Element {
     const handleListItemHover = (evt: React.MouseEvent<HTMLLIElement>) => {
-        const title = evt.currentTarget.innerText;
-        onListItemHover(title);
+        const id = evt.currentTarget.innerText;
+        onListItemHover(id);
       };
     
     return (
